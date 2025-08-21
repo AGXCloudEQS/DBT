@@ -2,13 +2,17 @@
 version: 2
 
 models:
-    - name: my_first_dbt_model
-      description: "A starter dbt model"
+    - name: dbt_patients
+      description: "A model of patients"
       columns:
-          - name: id
+          - name: pid
             description: "The primary key for this table"
             tests:
                 - unique
+                - not_null  
+          - name: address_id
+            description: "The foreign key for address table"
+            tests:
                 - not_null
 
     - name: my_second_dbt_model

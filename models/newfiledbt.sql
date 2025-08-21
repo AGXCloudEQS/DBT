@@ -1,1 +1,1 @@
-select * from agxdb.agxschema.patients
+select * from agxdb.agxschema.doctors
