@@ -1,25 +1,30 @@
-
 version: 2
+sources:
+  - name: snwflk
+    tables:
+      - name: dbt_patients
+      - name: dbt_treatment
+      - name: dbt_hospitals
 
 models:
-    - name: dbt_patients
-      description: "A model of patients"
-      columns:
-          - name: pid
-            description: "The primary key for this table"
-            tests:
-                - unique
-                - not_null  
-          - name: address_id
-            description: "The foreign key for address table"
-            tests:
-                - not_null
+  - name: dbt_patients
+    description: "A model of patients"
+    columns:
+      - name: pid
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: address_id
+        description: "The foreign key for address table"
+        tests:
+          - not_null
 
-    - name: my_second_dbt_model
-      description: "A starter dbt model"
-      columns:
-          - name: id
-            description: "The primary key for this table"
-            tests:
-                - unique
-                - not_null
+  - name: dbt_doctors
+    description: "A doctor model"
+    columns:
+      - name: doctor_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
