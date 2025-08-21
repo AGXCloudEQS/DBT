@@ -10,6 +10,9 @@ treatment as (
 ),
 dates as (
     select date_of_treatment from {{ref("dbt_date")}}
+),
+doctors as (
+    select * from {{ref("dbt_doctors")}}
 )
 select patient.fname , hospitals.h_name , treatment.amount 
 from patient , hospitals, treatment  
