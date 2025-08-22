@@ -15,5 +15,5 @@ doctors as (
     select * from {{ref("dbt_doctors")}}
 )
 select patient.fname , hospitals.h_name , treatment.amount 
-from patient , hospitals, treatment  
+from patient , hospitals, agxdb.agxschema.treatment  
 where patient.pid=treatment.patient_id and hospitals.h_id=treatment.hospital_id 
